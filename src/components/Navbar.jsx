@@ -34,15 +34,15 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link className="text-lg" href="/profile">
-              Profile
+            <Link className="text-lg" href="/my-profile">
+              My Profile
             </Link>
           </li>
         </ul>
         {data?.user ? (
           <div className="flex gap-2 items-center">
             <Avatar>
-              <Avatar.Image alt="John Doe" src={data?.user.image} />
+              <Avatar.Image alt={data?.user.name} src={data?.user.image} />
               <Avatar.Fallback>{data?.user.name[0]}</Avatar.Fallback>
             </Avatar>
             <Button onClick={handleSignOut}>LogOut</Button>
