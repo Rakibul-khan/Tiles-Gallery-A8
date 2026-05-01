@@ -1,5 +1,6 @@
 import Banner from "@/components/Banner";
 import FeaturedTiles from "@/components/FeaturedTiles";
+import Footer from "@/components/Footer";
 import Marquee from "@/components/Marquee";
 import Image from "next/image";
 

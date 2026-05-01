@@ -1,6 +1,15 @@
+"use client";
+import { authClient, useSession } from "@/lib/auth-client";
 import { Button, Link } from "@heroui/react";
+import { Avatar } from "@heroui/react";
+import { signOut } from "better-auth/api";
 
 const Navbar = () => {
+  const { data, isPending } = useSession();
+  // console.log(data?.user);
+  const handleSignOut = async () => {
+    await authClient.signOut();
+  };
   return (
     <nav className="sticky top-0 z-40 w-full border-b border-separator bg-background/70 backdrop-blur-lg">
       <header className=" w-11/12 mx-auto flex h-16 items-center justify-between px-6 py-2">
@@ -24,9 +33,24 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-        <div>
-          <Button>Login</Button>
-        </div>
+        {data?.user ? (
+          <div className="flex gap-2 items-center">
+            <Avatar>
+              <Avatar.Image
+                alt="John Doe"
+                src="https://img.heroui.chat/image/avatar?w=400&h=400&u=3"
+              />
+              <Avatar.Fallback>{data?.user.name[0]}</Avatar.Fallback>
+            </Avatar>
+            <Button onClick={handleSignOut}>LogOut</Button>
+          </div>
+        ) : (
+          <div>
+            <Link href="/auth/signin">
+              <Button>Login</Button>
+            </Link>
+          </div>
+        )}
       </header>
     </nav>
   );

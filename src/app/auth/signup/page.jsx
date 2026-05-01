@@ -1,4 +1,5 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import {
   Button,
@@ -10,11 +11,34 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import { redirect } from "next/navigation";
 
 const SignUpPage = () => {
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const photourl = e.target.photourl.value;
+    const password = e.target.password.value;
+    // console.log({ name, email, photourl, password });
+
+    const { data, error } = await authClient.signUp.email({
+      name: name,
+      email: email,
+      image: photourl,
+      password: password,
+      callbackURL: "/",
+    });
+    console.log(data);
+    if (data) {
+      alert("Successfully logged in ");
+      redirect("/");
+    }
+    if (error) {
+      alert(error.message);
+    }
   };
+
   return (
     <div className="h-screen flex flex-col gap-6 justify-center items-center">
       <h1 className="font-semibold text-4xl text-center">Sign Up</h1>
