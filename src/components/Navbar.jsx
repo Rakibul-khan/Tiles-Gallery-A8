@@ -3,10 +3,11 @@ import { authClient, useSession } from "@/lib/auth-client";
 import { Button, Link } from "@heroui/react";
 import { Avatar } from "@heroui/react";
 import { signOut } from "better-auth/api";
-import { redirect } from "next/navigation";
+import { redirect, usePathname } from "next/navigation";
 
 const Navbar = () => {
   const { data, isPending } = useSession();
+  const pathname = usePathname();
   // console.log(data?.user);
   const handleSignOut = async () => {
     await authClient.signOut();
@@ -24,17 +25,26 @@ const Navbar = () => {
         </div>
         <ul className="flex items-center gap-4">
           <li>
-            <Link className="text-lg" href="/">
+            <Link
+              className={` text-lg text-gray-600 no-underline ${pathname === "/" ? "underline text-gray-800" : "text-gray-800"}`}
+              href="/"
+            >
               Home
             </Link>
           </li>
           <li>
-            <Link className="text-lg" href="/all-tiles">
+            <Link
+              className={`text-lg no-underline text-gray-600 ${pathname === "/all-tiles" ? "underline text-gray-800" : "text-gray-800"}`}
+              href="/all-tiles"
+            >
               All Tiles
             </Link>
           </li>
           <li>
-            <Link className="text-lg" href="/my-profile">
+            <Link
+              className={`text-lg no-underline text-gray-600 ${pathname === "/my-profile" ? "underline text-gray-800" : "text-gray-800"}`}
+              href="/my-profile"
+            >
               My Profile
             </Link>
           </li>
@@ -45,7 +55,9 @@ const Navbar = () => {
               <Avatar.Image alt={data?.user.name} src={data?.user.image} />
               <Avatar.Fallback>{data?.user.name[0]}</Avatar.Fallback>
             </Avatar>
-            <Button onClick={handleSignOut}>LogOut</Button>
+            <Button className="bg-blue-500" onClick={handleSignOut}>
+              LogOut
+            </Button>
           </div>
         ) : (
           <div>

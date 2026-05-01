@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import BannerImg from "@/assests/banner.png";
 import { Button } from "@heroui/react";
+import Link from "next/link";
 
 const Banner = () => {
   return (
@@ -17,9 +18,14 @@ const Banner = () => {
         <h1 className="text-8xl font-bold mb-4 text-gray-300">
           Discover Your Perfect Aesthetic
         </h1>
-        <Button variant="outline" className="text-2xl p-7">
-          Browse Now
-        </Button>
+        <Link href="/all-tiles">
+          <Button
+            variant="outline"
+            className="text-2xl p-7 my-10 text-gray-900  "
+          >
+            Browse Now
+          </Button>
+        </Link>
       </div>
     </div>
   );
