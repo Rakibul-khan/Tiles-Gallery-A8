@@ -9,7 +9,7 @@ const TileDetailsPage = async ({ params }) => {
   const tile = await getTiles();
 
   return (
-    <div className="w-11/12 mx-auto mt-15 bg-gray-100 p-6 rounded-lg flex gap-7 space-y-3">
+    <div className="w-11/12 mx-auto my-15 bg-gray-100 p-6 rounded-lg flex gap-7 space-y-3">
       <div className="flex-1">
         <Image
           className="rounded-lg"

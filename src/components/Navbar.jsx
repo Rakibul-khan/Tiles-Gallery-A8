@@ -11,6 +11,7 @@ const Navbar = () => {
   // console.log(data?.user);
   const handleSignOut = async () => {
     await authClient.signOut();
+    redirect("/");
   };
   return (
     <nav className="sticky top-0 z-40 w-full border-b border-separator bg-background/70 backdrop-blur-lg">
@@ -55,14 +56,24 @@ const Navbar = () => {
               <Avatar.Image alt={data?.user.name} src={data?.user.image} />
               <Avatar.Fallback>{data?.user.name[0]}</Avatar.Fallback>
             </Avatar>
-            <Button className="bg-blue-500" onClick={handleSignOut}>
+            <Button
+              className="bg-blue-500 no-underline"
+              onClick={handleSignOut}
+            >
               LogOut
             </Button>
           </div>
         ) : (
-          <div>
-            <Link href="/auth/signin">
+          <div className="flex items-center gap-3">
+            <Link
+              className="no-underline flex gap-2 items-center"
+              href="/auth/signin"
+            >
               <Button>Login</Button>
+            </Link>
+            <Link className="no-underline" href="/auth/signup">
+              {" "}
+              <Button>Sign Up</Button>
             </Link>
           </div>
         )}

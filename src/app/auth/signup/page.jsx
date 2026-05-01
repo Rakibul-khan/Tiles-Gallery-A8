@@ -12,6 +12,7 @@ import {
   TextField,
 } from "@heroui/react";
 import { redirect } from "next/navigation";
+import { FaGoogle } from "react-icons/fa";
 
 const SignUpPage = () => {
   const onSubmit = async (e) => {
@@ -37,6 +38,11 @@ const SignUpPage = () => {
     if (error) {
       alert(error.message);
     }
+  };
+  const handleSignUpGoogle = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
   };
 
   return (
@@ -114,13 +120,21 @@ const SignUpPage = () => {
           <div className="flex gap-2">
             <Button type="submit">
               <Check />
-              Submit
+              Sign Up
             </Button>
             <Button type="reset" variant="secondary">
               Reset
             </Button>
           </div>
         </Form>
+        <p className="text-center text-lg underline">or</p>
+        <Button
+          onClick={handleSignUpGoogle}
+          className="w-full"
+          variant="outline"
+        >
+          <FaGoogle></FaGoogle> Sign Up with Google
+        </Button>
       </Card>
     </div>
   );

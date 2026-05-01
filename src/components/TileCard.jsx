@@ -17,7 +17,10 @@ const TileCard = ({ tile }) => {
         <Card.Title className="text-xl mt-2">{tile.title}</Card.Title>
       </Card.Header>
       <LinkTag href={`/all-tiles/${tile.id}`}>
-        <Button className="w-full" variant="outline">
+        <Button
+          className="w-full bg-blue-500 text-white py-5"
+          variant="outline"
+        >
           View Details
         </Button>
       </LinkTag>
