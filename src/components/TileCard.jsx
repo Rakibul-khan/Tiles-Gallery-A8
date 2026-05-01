@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const TileCard = ({ tile }) => {
   return (
-    <Card className="w-[400px] ">
+    <Card className=" ">
       <Card.Header>
         <Image
           className="rounded-lg"
@@ -14,7 +14,6 @@ const TileCard = ({ tile }) => {
           sizes="100vw"
         ></Image>
         <Card.Title className="text-xl mt-2">{tile.title}</Card.Title>
-        <Card.Description>{tile.description}</Card.Description>
       </Card.Header>
       <Button className="w-full" variant="outline">
         View Details
