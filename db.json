@@ -3,7 +3,7 @@
     {
       "id": "tile_001",
       "title": "Ceramic Blue Tile",
-      "description": "Premium ceramic tile with blue glaze finish",
+      "description": "Premium ceramic tile with a smooth blue glaze finish, designed to enhance both modern and classic interiors. Its durable surface resists moisture, stains, and scratches.",
       "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f",
       "category": "ceramic",
       "price": 45.99,
@@ -15,7 +15,7 @@
     {
       "id": "tile_002",
       "title": "Marble White Tile",
-      "description": "Elegant marble tile with polished white surface",
+      "description": "Elegant marble tile featuring polished white surface with natural veining, perfect for luxury interiors and premium flooring applications.",
       "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
       "category": "marble",
       "price": 65.5,
@@ -27,7 +27,7 @@
     {
       "id": "tile_003",
       "title": "Granite Black Tile",
-      "description": "Durable black granite flooring tile",
+      "description": "Strong black granite tile designed for heavy traffic areas. Resistant to heat, water, and scratches with a sleek modern finish.",
       "image": "https://images.unsplash.com/photo-1484154218962-a197022b5858",
       "category": "granite",
       "price": 72.0,
@@ -39,7 +39,7 @@
     {
       "id": "tile_004",
       "title": "Wood Finish Tile",
-      "description": "Natural wood-look porcelain tile",
+      "description": "Porcelain tile with realistic wood texture offering natural warmth with zero maintenance required like real wood flooring.",
       "image": "https://images.unsplash.com/photo-1494526585095-c41746248156",
       "category": "porcelain",
       "price": 39.99,
@@ -51,7 +51,7 @@
     {
       "id": "tile_005",
       "title": "Mosaic Green Tile",
-      "description": "Decorative mosaic tile with glossy finish",
+      "description": "Glossy green mosaic tile designed for decorative walls and kitchen backsplashes, adding vibrant texture and artistic appeal.",
       "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
       "category": "mosaic",
       "price": 28.75,
@@ -63,7 +63,7 @@
     {
       "id": "tile_006",
       "title": "Rustic Brown Tile",
-      "description": "Rustic style matte finish floor tile",
+      "description": "Matte rustic ceramic tile inspired by natural earthy tones, ideal for warm traditional interior spaces.",
       "image": "https://images.unsplash.com/photo-1449844908441-8829872d2607",
       "category": "ceramic",
       "price": 41.25,
@@ -75,7 +75,7 @@
     {
       "id": "tile_007",
       "title": "Luxury Gold Tile",
-      "description": "Premium luxury tile with golden texture",
+      "description": "High-end designer tile with golden texture finish, perfect for luxury hotels, feature walls, and premium interiors.",
       "image": "https://images.unsplash.com/photo-1460317442991-0ec209397118",
       "category": "designer",
       "price": 95.0,
@@ -87,7 +87,7 @@
     {
       "id": "tile_008",
       "title": "Concrete Grey Tile",
-      "description": "Modern concrete-look matte tile",
+      "description": "Minimal industrial concrete-style tile with matte grey finish, perfect for modern apartments and office spaces.",
       "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
       "category": "industrial",
       "price": 52.3,
@@ -99,7 +99,7 @@
     {
       "id": "tile_009",
       "title": "Patterned Vintage Tile",
-      "description": "Vintage patterned decorative wall tile",
+      "description": "Decorative vintage tile with artistic patterns inspired by classic European interior designs.",
       "image": "https://images.unsplash.com/photo-1494526585095-c41746248156",
       "category": "decorative",
       "price": 34.99,
@@ -111,7 +111,7 @@
     {
       "id": "tile_010",
       "title": "Outdoor Stone Tile",
-      "description": "Weather-resistant outdoor stone tile",
+      "description": "Durable natural stone tile designed for outdoor use with weather resistance and anti-slip surface.",
       "image": "https://images.unsplash.com/photo-1489515217757-5fd1be406fef",
       "category": "stone",
       "price": 58.49,
@@ -123,8 +123,8 @@
     {
       "id": "tile_011",
       "title": "Glossy Ivory Tile",
-      "description": "Elegant glossy ivory ceramic tile",
-      "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+      "description": "Elegant ivory ceramic tile with glossy finish that reflects light and makes interiors feel spacious and bright.",
+      "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f",
       "category": "ceramic",
       "price": 49.99,
       "currency": "USD",
@@ -135,7 +135,7 @@
     {
       "id": "tile_012",
       "title": "Slate Texture Tile",
-      "description": "Textured slate finish outdoor tile",
+      "description": "Rough slate textured tile ideal for outdoor areas like patios, terraces, and garden pathways.",
       "image": "https://images.unsplash.com/photo-1449844908441-8829872d2607",
       "category": "stone",
       "price": 63.2,
@@ -147,8 +147,8 @@
     {
       "id": "tile_013",
       "title": "Classic Beige Tile",
-      "description": "Classic beige tile for modern interiors",
-      "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f",
+      "description": "Soft beige porcelain tile with neutral tone that fits perfectly in any modern or traditional interior.",
+      "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
       "category": "porcelain",
       "price": 37.45,
       "currency": "USD",
@@ -159,7 +159,7 @@
     {
       "id": "tile_014",
       "title": "Dark Concrete Tile",
-      "description": "Industrial dark concrete look tile",
+      "description": "Bold dark concrete tile designed for industrial-style interiors with a strong modern aesthetic.",
       "image": "https://images.unsplash.com/photo-1484154218962-a197022b5858",
       "category": "industrial",
       "price": 56.8,
@@ -171,7 +171,7 @@
     {
       "id": "tile_015",
       "title": "Decor Floral Tile",
-      "description": "Floral decorative wall tile for interiors",
+      "description": "Beautiful floral patterned ceramic tile designed for decorative wall accents and artistic interior styling.",
       "image": "https://images.unsplash.com/photo-1494526585095-c41746248156",
       "category": "decorative",
       "price": 31.5,
