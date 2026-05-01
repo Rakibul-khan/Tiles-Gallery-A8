@@ -3,6 +3,7 @@ import { authClient, useSession } from "@/lib/auth-client";
 import { Button, Link } from "@heroui/react";
 import { Avatar } from "@heroui/react";
 import { signOut } from "better-auth/api";
+import { redirect } from "next/navigation";
 
 const Navbar = () => {
   const { data, isPending } = useSession();
@@ -14,7 +15,12 @@ const Navbar = () => {
     <nav className="sticky top-0 z-40 w-full border-b border-separator bg-background/70 backdrop-blur-lg">
       <header className=" w-11/12 mx-auto flex h-16 items-center justify-between px-6 py-2">
         <div className="flex items-center gap-3">
-          <p className="font-bold text-xl">Tiles Gallery</p>
+          <p
+            onClick={() => redirect("/")}
+            className="font-bold text-xl cursor-pointer"
+          >
+            Tiles Gallery
+          </p>
         </div>
         <ul className="flex items-center gap-4">
           <li>
@@ -36,10 +42,7 @@ const Navbar = () => {
         {data?.user ? (
           <div className="flex gap-2 items-center">
             <Avatar>
-              <Avatar.Image
-                alt="John Doe"
-                src="https://img.heroui.chat/image/avatar?w=400&h=400&u=3"
-              />
+              <Avatar.Image alt="John Doe" src={data?.user.image} />
               <Avatar.Fallback>{data?.user.name[0]}</Avatar.Fallback>
             </Avatar>
             <Button onClick={handleSignOut}>LogOut</Button>
