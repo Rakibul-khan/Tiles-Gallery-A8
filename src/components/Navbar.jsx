@@ -3,19 +3,31 @@ import { authClient, useSession } from "@/lib/auth-client";
 import { Button, Link } from "@heroui/react";
 import { Avatar } from "@heroui/react";
 import { signOut } from "better-auth/api";
-import { redirect, usePathname } from "next/navigation";
+import { redirect, usePathname, useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+  const handleAvatarClick = () => {
+    redirect("/my-profile");
+  };
   const { data, isPending } = useSession();
+  console.log(data?.user);
+  const router = useRouter();
   const pathname = usePathname();
   // console.log(data?.user);
   const handleSignOut = async () => {
     await authClient.signOut();
-    redirect("/");
+    toast.success("successfully logged out");
+    // router.push("/");
+    // router.refresh();
+    window.location.reload();
   };
   return (
     <nav className="sticky top-0 z-40 w-full border-b border-separator bg-background/70 backdrop-blur-lg">
-      <header className=" w-11/12 mx-auto flex h-16 items-center justify-between px-6 py-2">
+      <header
+        className=" w-11/12 mx-auto space-y-2 md:space-y-0 flex flex-col md:flex-row
+       md:h-16 items-center justify-between px-6 py-2"
+      >
         <div className="flex items-center gap-3">
           <p
             onClick={() => redirect("/")}
@@ -52,7 +64,7 @@ const Navbar = () => {
         </ul>
         {data?.user ? (
           <div className="flex gap-2 items-center">
-            <Avatar>
+            <Avatar onClick={handleAvatarClick}>
               <Avatar.Image alt={data?.user.name} src={data?.user.image} />
               <Avatar.Fallback>{data?.user.name[0]}</Avatar.Fallback>
             </Avatar>

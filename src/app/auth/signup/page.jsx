@@ -11,10 +11,15 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
-import { redirect } from "next/navigation";
+import Link from "next/link";
+
+import { useRouter } from "next/navigation";
+
 import { FaGoogle } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const SignUpPage = () => {
+  const router = useRouter();
   const onSubmit = async (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -30,13 +35,15 @@ const SignUpPage = () => {
       password: password,
       callbackURL: "/",
     });
-    console.log(data);
+
     if (data) {
-      alert("Successfully logged in ");
-      redirect("/");
+      toast.success("Successfully signed up ");
+
+      window.location.reload();
+      redirect("/auth/signin");
     }
     if (error) {
-      alert(error.message);
+      toast.error(error.message);
     }
   };
   const handleSignUpGoogle = async () => {
@@ -135,6 +142,12 @@ const SignUpPage = () => {
         >
           <FaGoogle></FaGoogle> Sign Up with Google
         </Button>
+        <div className="text-center text-lg">
+          <Link href={"/auth/signin"}>
+            Already have an account?
+            <span className="underline text-blue-500"> Login</span>
+          </Link>
+        </div>
       </Card>
     </div>
   );

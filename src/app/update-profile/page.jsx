@@ -11,16 +11,21 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import { useRouter } from "next/navigation";
 
 const UpdateProfile = () => {
+  const router = useRouter();
   const onSubmit = async (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const photoUrl = e.target.photourl.value;
-    await authClient.updateUser({
+    const data = await authClient.updateUser({
       name,
       photoUrl,
     });
+    if (data) {
+      router.push("/my-profile");
+    }
   };
   return (
     <div className="bg-gray-100">

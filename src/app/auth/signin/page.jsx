@@ -11,6 +11,7 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import Link from "next/link";
 import { FaGoogle } from "react-icons/fa";
 import { toast } from "react-toastify";
 
@@ -101,6 +102,11 @@ const SignInPage = () => {
         >
           <FaGoogle /> Sign in with Google
         </Button>
+        <div className="text-center text-lg">
+          <Link href={"/auth/signup"}>
+            New here? <span className="underline text-blue-400">Register</span>
+          </Link>
+        </div>
       </Card>
     </div>
   );
