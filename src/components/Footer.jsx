@@ -93,7 +93,7 @@ const Footer = () => {
 
       {/* Bottom */}
       <div className="border-t border-white/10 py-5 text-center text-sm text-gray-500">
-        © 2026 YourBrand. All rights reserved.
+        © 2026 Tiles Gallery. All rights reserved.
       </div>
     </footer>
   );

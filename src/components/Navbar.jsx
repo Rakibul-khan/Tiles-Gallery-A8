@@ -56,10 +56,7 @@ const Navbar = () => {
               <Avatar.Image alt={data?.user.name} src={data?.user.image} />
               <Avatar.Fallback>{data?.user.name[0]}</Avatar.Fallback>
             </Avatar>
-            <Button
-              className="bg-blue-500 no-underline"
-              onClick={handleSignOut}
-            >
+            <Button className="bg-red-500 no-underline" onClick={handleSignOut}>
               LogOut
             </Button>
           </div>

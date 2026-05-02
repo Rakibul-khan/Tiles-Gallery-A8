@@ -12,6 +12,7 @@ import {
   TextField,
 } from "@heroui/react";
 import { FaGoogle } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const SignInPage = () => {
   const onSubmit = async (e) => {
@@ -26,10 +27,10 @@ const SignInPage = () => {
       callbackURL: "/",
     });
     if (data) {
-      alert("logged in Successfully");
+      toast.success("logged in Successfully");
     }
     if (error) {
-      alert(error.message);
+      toast.error(error.message);
     }
   };
   const handleSignInGoogle = async () => {
@@ -54,7 +55,7 @@ const SignInPage = () => {
             }}
           >
             <Label>Email</Label>
-            <Input placeholder="john@example.com" />
+            <Input placeholder="Enter Your Email" />
             <FieldError />
           </TextField>
           <TextField
