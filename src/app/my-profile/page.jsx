@@ -10,9 +10,9 @@ const MyProfilePage = async () => {
   });
   //   console.log(session);
   return (
-    <div className="flex flex-col justify-center items-center  h-[80vh] bg-gray-100 ">
+    <div className="flex flex-col justify-center items-center h-full pb-10 md:pb-0  md:h-[80vh] bg-gray-100 ">
       <h1 className="text-4xl font-semibold text-center py-6">My Profile</h1>
-      <Card className="px-20 py-10 text-center">
+      <Card className="px-4 py-6 md:px-20 md:py-10 text-center">
         <Avatar className="mx-auto">
           <Avatar.Image alt={session?.user.name} src={session?.user.image} />
           <Avatar.Fallback>{session?.user.name[0]}</Avatar.Fallback>

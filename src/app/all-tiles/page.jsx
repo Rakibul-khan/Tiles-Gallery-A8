@@ -21,7 +21,7 @@ const AllTilesPage = async () => {
           placeholder="Search  Tiles..."
         />
       </div>
-      <div className="grid grid-cols-3 gap-3 w-11/12 mx-auto">
+      <div className="grid md:grid-cols-3 gap-3 w-11/12 mx-auto">
         {tiles.map((tile) => (
           <TileCard key={tile.id} tile={tile}></TileCard>
         ))}

@@ -33,8 +33,11 @@ const UpdateProfile = () => {
         <h2 className="text-4xl font-semibold text-center py-6">
           Update Profile
         </h2>
-        <Card className="py-10">
-          <Form className="flex w-96 flex-col gap-4" onSubmit={onSubmit}>
+        <Card className="md:py-10">
+          <Form
+            className="flex w-70 md:w-96 flex-col gap-4 p-6 md:p-0"
+            onSubmit={onSubmit}
+          >
             <TextField isRequired name="name" type="text">
               <Label>Name</Label>
               <Input placeholder="Your Name" />
