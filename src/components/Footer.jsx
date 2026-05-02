@@ -12,7 +12,7 @@ import {
 const Footer = () => {
   return (
     <footer className="bg-black text-white mt-20">
-      <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12">
         {/* Brand */}
         <div>
           <h2 className="text-3xl font-bold mb-4">Tiles Gallery</h2>
