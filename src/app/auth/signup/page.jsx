@@ -1,5 +1,5 @@
 "use client";
-import { authClient } from "@/lib/auth-client";
+import { authClient, signOut } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import {
   Button,
@@ -11,9 +11,10 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
-import Link from "next/link";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+// import { useRouter } from "next/router";
 
 import { FaGoogle } from "react-icons/fa";
 import { toast } from "react-toastify";
@@ -34,17 +35,18 @@ const SignUpPage = () => {
       image: photourl,
       password: password,
       callbackURL: "/",
+      fetchOptions: {
+        onSuccess: () => {
+          // toast.success("Successfully signed up ");
+
+          router.push("/auth/signin");
+          signOut();
+        },
+        onError: (error) => {
+          toast.error(error.message);
+        },
+      },
     });
-
-    if (data) {
-      toast.success("Successfully signed up ");
-
-      window.location.reload();
-      redirect("/auth/signin");
-    }
-    if (error) {
-      toast.error(error.message);
-    }
   };
   const handleSignUpGoogle = async () => {
     await authClient.signIn.social({

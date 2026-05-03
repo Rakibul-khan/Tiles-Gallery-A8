@@ -19,13 +19,15 @@ const UpdateProfile = () => {
     e.preventDefault();
     const name = e.target.name.value;
     const photoUrl = e.target.photourl.value;
-    const data = await authClient.updateUser({
+    await authClient.updateUser({
       name,
-      photoUrl,
+      image: photoUrl,
+      fetchOptions: {
+        onSuccess: () => {
+          router.push("/my-profile");
+        },
+      },
     });
-    if (data) {
-      router.push("/my-profile");
-    }
   };
   return (
     <div className="bg-gray-100">

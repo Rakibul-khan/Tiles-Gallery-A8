@@ -11,17 +11,16 @@ const Navbar = () => {
     redirect("/my-profile");
   };
   const { data, isPending } = useSession();
-  console.log(data?.user);
-  const router = useRouter();
+
   const pathname = usePathname();
-  // console.log(data?.user);
+
   const handleSignOut = async () => {
     await authClient.signOut();
     toast.success("successfully logged out");
-    // router.push("/");
-    // router.refresh();
+
     window.location.reload();
   };
+
   return (
     <nav className="sticky top-0 z-40 w-full border-b border-separator bg-background/70 backdrop-blur-lg">
       <header
@@ -31,7 +30,7 @@ const Navbar = () => {
         <div className="flex items-center gap-3">
           <p
             onClick={() => redirect("/")}
-            className="font-bold text-xl cursor-pointer"
+            className="font-bold text-xl cursor-pointer animate__animated  animate__zoomIn"
           >
             Tiles Gallery
           </p>
