@@ -1,9 +1,20 @@
+"use client";
 import SearchComponent from "@/components/SearchComponent";
 import TilesFetching from "@/components/TilesFetching";
 import { getTiles } from "../fetch";
+import { useState, useEffect } from "react";
 
-const AllTilesPage = async () => {
-  const tiles = await getTiles();
+const AllTilesPage = () => {
+  const [tiles, setTiles] = useState([]);
+  const [filteredData, setFilterData] = useState([]);
+  useEffect(() => {
+    const fetchMyTiles = async () => {
+      const data = await getTiles();
+      setTiles(data);
+      setFilterData(data);
+    };
+    fetchMyTiles();
+  }, []);
 
   return (
     <>
@@ -11,8 +22,11 @@ const AllTilesPage = async () => {
         The Gallery of Tiles
       </h1>
       <div className=" w-11/12 mx-auto">
-        <SearchComponent tiles={tiles}></SearchComponent>
-        <TilesFetching></TilesFetching>
+        <SearchComponent
+          setFilterData={setFilterData}
+          tiles={tiles}
+        ></SearchComponent>
+        <TilesFetching tiles={filteredData}></TilesFetching>
       </div>
     </>
   );

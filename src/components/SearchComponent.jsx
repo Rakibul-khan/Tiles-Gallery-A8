@@ -4,15 +4,14 @@ import { Button } from "@heroui/react";
 import { useState } from "react";
 import TileCard from "./TileCard";
 
-const SearchComponent = ({ tiles }) => {
+const SearchComponent = ({ tiles, setFilterData }) => {
   const [search, setSearch] = useState("");
-  const [filteredData, setFilterData] = useState([]);
+
   const handleSearch = (e) => {
     const data = tiles.filter((tile) =>
       tile.title.toLowerCase().includes(search.toLowerCase()),
     );
     setFilterData(data);
-    setToggle(true);
   };
 
   return (
@@ -32,11 +31,6 @@ const SearchComponent = ({ tiles }) => {
         <Button onClick={handleSearch} variant="outline" className="py-5 px-6">
           Search
         </Button>
-      </div>
-      <div>
-        {filteredData.map((tile) => (
-          <TileCard key={tile.id} tile={tile}></TileCard>
-        ))}
       </div>
     </div>
   );

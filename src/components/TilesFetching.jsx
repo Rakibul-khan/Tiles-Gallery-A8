@@ -1,9 +1,7 @@
 import { getTiles } from "@/app/fetch";
 import TileCard from "./TileCard";
 
-const TilesFetching = async () => {
-  const tiles = await getTiles();
-
+const TilesFetching = ({ tiles }) => {
   return (
     <div className="grid md:grid-cols-3 gap-4">
       {tiles.map((tile) => (

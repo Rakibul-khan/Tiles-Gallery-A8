@@ -1,16 +1,20 @@
 "use client";
+import "animate.css";
 import { authClient, useSession } from "@/lib/auth-client";
-import { Button, Link } from "@heroui/react";
+import { Button } from "@heroui/react";
 import { Avatar } from "@heroui/react";
 import { signOut } from "better-auth/api";
+import Link from "next/link";
 import { redirect, usePathname, useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import { useState } from "react";
 
 const Navbar = () => {
   const handleAvatarClick = () => {
     redirect("/my-profile");
   };
   const { data, isPending } = useSession();
+  const [animate, setAnimate] = useState(false);
 
   const pathname = usePathname();
 
@@ -19,6 +23,9 @@ const Navbar = () => {
     toast.success("successfully logged out");
 
     window.location.reload();
+  };
+  const handleClickLogo = () => {
+    setAnimate(true);
   };
 
   return (
@@ -29,8 +36,8 @@ const Navbar = () => {
       >
         <div className="flex items-center gap-3">
           <p
-            onClick={() => redirect("/")}
-            className="font-bold text-xl cursor-pointer animate__animated  animate__zoomIn"
+            onClick={handleClickLogo}
+            className={`font-bold text-xl cursor-pointer ${animate ? "animate__animated  animate__zoomIn" : ""}`}
           >
             Tiles Gallery
           </p>
