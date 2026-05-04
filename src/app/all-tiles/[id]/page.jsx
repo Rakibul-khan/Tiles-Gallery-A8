@@ -3,7 +3,7 @@ import Image from "next/image";
 const TileDetailsPage = async ({ params }) => {
   const { id } = await params;
   const getTiles = async () => {
-    const res = await fetch(`http://localhost:5000/tiles/${id}`);
+    const res = await fetch(`https://json-server-a8.onrender.com/tiles/${id}`);
     return await res.json();
   };
   const tile = await getTiles();
