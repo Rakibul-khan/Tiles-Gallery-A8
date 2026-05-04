@@ -51,4 +51,4 @@ MongoDB
 #### Deployment
 Vercel / Render <br>
 
-Live Link : 
+Live Link :  https://tiles-gallery-a8-ylhw.vercel.app/all-tiles
